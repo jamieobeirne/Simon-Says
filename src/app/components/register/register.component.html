@@ -1,0 +1,43 @@
+
+<div class="global-container-register">
+  <h1>Register</h1>
+  <div clas="register-fields">
+    <div class="formGroup">
+      <input
+        type="email"
+        class="formControl"
+        placeholder="Your Email"
+        #userEmail
+        required
+      />
+    </div>
+  
+    <div class="formGroup">
+      <input
+        type="password"
+        class="formControl"
+        placeholder="New Password"
+        #userPwd
+        required
+      />
+    </div>
+    <div class="formGroup">
+      <input
+        type="button"
+        class="btn btnPrimary"
+        value="Register"
+        (click)="register(userEmail.value, userPwd.value)"
+      />
+    </div>
+  
+    <div class="redirect-Login">
+      <span
+        >Go to
+        <span class="redirect" routerLink="/login">
+          Login</span></span>
+    </div>
+
+
+  </div>
+</div>
+  

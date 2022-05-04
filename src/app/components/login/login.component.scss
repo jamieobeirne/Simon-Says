@@ -1,0 +1,16 @@
+$green: #85e697;
+
+.global-container-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.password-link{
+  color:$green
+}
+
+.password-link:hover  {
+  color: rgb(96, 53, 227);
+}

@@ -1,0 +1,40 @@
+  
+<div class="global-container-dashboard">
+ 
+  
+  <div class="dashboard-link-container">
+    <input
+      class="dashboard-link"
+      type="button"
+      value="Go To Speaking Improvement Tool"
+      (click)="openVoiceTool()"
+    />
+  </div>
+
+  <!--
+    <button *ngIf="authService.canView"
+    (click)="editPost()">
+    Edit Post
+    </button>
+  -->
+<main role="main" class="">
+    <div class="">
+      <h1 class="h2">Welcome to Simon Says!</h1>
+    </div>
+    <div class="row" *ngIf="authService.userData as user">
+      <div class="">
+        <p>User ID: <strong>{{authService.userInfo.uid}}</strong></p>
+        <p>Email: <strong>{{authService.userInfo.email}}</strong></p>
+        <p>Email Verified: <strong>{{authService.userInfo.emailVerified}}</strong></p>
+        <p>User Role:<strong *ngFor="let role of authService.userInfo.roles | keyvalue">{{role.key}}</strong></p> 
+        <!--pipe: creates an object for each keyname so we can read it-->
+      </div>
+    </div>
+</main>
+
+
+
+
+</div>
+ 
+

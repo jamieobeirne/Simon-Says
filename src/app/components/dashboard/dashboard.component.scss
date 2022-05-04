@@ -1,0 +1,22 @@
+$green: #85e697;
+
+.global-container-dashboard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.dashboard-link{
+  color:$green;
+}
+
+.dashboard-link-container  li{
+  text-decoration: none;
+  border:solid 1px blue; 
+}
+
+.dashboard-link:hover  {
+  color: rgb(96, 53, 227);
+}
+
