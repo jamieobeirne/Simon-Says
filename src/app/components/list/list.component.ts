@@ -8,25 +8,29 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-
+  displayedColumns: string[] = ['uid', 'email', 'verified', 'roles', 'actions'];
   userList: User[] = [];
 
   constructor(private authService : AuthService) {
    
-    console.log("From Component1", this.userList)
   }
 
   ngOnInit(): void {
-    
+  
     //this.userList = this.authService.getListOfUsers()
-
     this.authService.getListOfUsers()
       .then(result=> {
         this.userList = result
-        console.log("From Component2", this.userList)
+        
+        this.userList[0].roles = { user: false,
+          professional: false,
+          admin: true} 
+
+        this.userList[1].roles = { user: true,
+          professional: false,
+          admin:false} 
+          
+        console.log("From List Component, value of roles: ", this.userList)
       })
-    
   }
-
-
 }

@@ -1,10 +1,9 @@
 
 export interface Roles {
   user?: boolean;
-  professional?: boolean;
+  professional?: boolean ;
   admin?: boolean;
 }
-
 
 export interface User {
   email: string | null;

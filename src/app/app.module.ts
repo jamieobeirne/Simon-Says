@@ -20,7 +20,11 @@ import { VoiceToolComponent } from './components/voice-tool/voice-tool.component
 // service
 import { AuthService } from './shared/services/auth.service';
 import { ListComponent } from './components/list/list.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -42,6 +46,11 @@ import { ListComponent } from './components/list/list.component';
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatButtonModule,
+    MatCardModule,
+    MatListModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

@@ -15,10 +15,6 @@ import { BehaviorSubject, Subject } from 'rxjs';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 
-
-
-
-
 @Injectable({
   providedIn: 'root',
 })
@@ -55,9 +51,6 @@ export class AuthService {
             localStorage.setItem('user', 'null');
         } 
       })
-      
-    
-
     }
 
 
@@ -68,7 +61,7 @@ export class AuthService {
           this.userData.subscribe(data => {
           this.userInfo = data;
           this.authBehaviorSubject.next({isLoggedIn:true, isAdmin:this.userInfo.roles.admin, isUser:this.userInfo.roles.user});});
-        this.router.navigate(['dashboard']);
+          this.router.navigate(['dashboard']);
       })
       .catch((error) => {
         window.alert(error.message);
@@ -85,7 +78,7 @@ export class AuthService {
       email: user.email,
       emailVerified: true,
       roles:  {
-        user: true
+        user: true,
       }
     };
     return userRef.set(userData, {
@@ -119,11 +112,11 @@ export class AuthService {
 
   canView(): boolean{
     const allowed = ['admin'] 
-    let user = this.getUserFromLocalStorage();
+    let user = this.getUser();
     return this.checkAuthorization(user, allowed)
   }
 
-  getUserFromLocalStorage(): User{
+  getUser(): User{
     let data = localStorage.getItem("user") || "";
     let dataObject = JSON.parse(data);
     return dataObject;
@@ -178,7 +171,7 @@ export class AuthService {
       .then(result=>{
         return result.docs.map(item=>item.data() as User)
       });
-    console.log("From Service: ", info);
+    console.log("From Service, getListOfUsers(): ", info);
     return info;
   }
 } 

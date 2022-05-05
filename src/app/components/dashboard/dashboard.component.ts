@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { User } from 'firebase/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore'
 import { Observable } from 'rxjs';
 import { AuthService } from '../../shared/services/auth.service';
+import { User } from '../../shared/services/user';
 
 
 @Component({
@@ -12,31 +12,18 @@ import { AuthService } from '../../shared/services/auth.service';
 })
 
 export class DashboardComponent implements OnInit {
-  //postRef : any;
-  //post$ : any;
- 
-  constructor(private afs: AngularFirestore, public authService: AuthService) { 
-  }
+  userInfo: any = {}
 
+  constructor(private afs: AngularFirestore, public authService: AuthService) {
+  }
+  
   ngOnInit() {
-    //this.postRef = this.afs.doc('posts/myTestPost')
-    //this.post$ = this.postRef.valueChanges()
+    //this.userInfo = this.authService.getUser();
+    //console.log("Dashboard userInfo: ", this.userInfo);
   }
   
   openVoiceTool() {
     this.authService.openVoiceTool();
   }
-  
-  /*
-  editPost() {
-    this.postRef.update({ title: 'Edited Title!'})
-  }
-
-  deletePost() {
-    this.postRef.delete()
-  }
-  */
-  
-  
 
 }

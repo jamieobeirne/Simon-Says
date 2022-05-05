@@ -1,4 +1,10 @@
+$grey: #878c88;
 $green: #85e697;
+$white: #FFFFFF;
+$block-font:"Oswald";
+$decorative-fonts:"Quattrocento";
+$small-font-size:.8em;
+$middle-font-size:1em;
 
 .global-container-dashboard{
   display: flex;
@@ -7,16 +13,37 @@ $green: #85e697;
   margin-top: 2em;
 }
 
-.dashboard-link{
-  color:$green;
-}
-
-.dashboard-link-container  li{
-  text-decoration: none;
-  border:solid 1px blue; 
+.speaking-button{
+  background-color: $green;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: $middle-font-size ;
 }
 
 .dashboard-link:hover  {
   color: rgb(96, 53, 227);
 }
 
+.card-background-color{
+  background-color: $grey;
+}
+
+mat-card {
+  margin-top: 1em;
+  width: 70%;
+  margin-bottom: 1em;
+}
+
+.mat-list-title{
+  font-size: $small-font-size
+}
+
+.mat-list-item{
+  font-size: $middle-font-size;
+}
+
+.edit-delete-button{
+  background-color: white;
+  color:$green;
+  margin-right: 2em;
+}

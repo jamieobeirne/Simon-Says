@@ -1,0 +1,39 @@
+$grey: #878c88;
+$green: #85e697;
+$white: #FFFFFF;
+$block-font:"Oswald";
+$decorative-fonts:"Quattrocento";
+$small-font-size:.8em;
+$middle-font-size:1em;
+
+
+.list-main-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+} 
+
+
+.table-background-color{
+  background-color: $grey;
+}
+
+table {
+  margin-top: 3em;
+  width: 90%;
+}
+
+th{
+  font-size: $small-font-size;
+}
+
+td{
+  font-size: $middle-font-size ;
+}
+
+.mat-button{
+  background-color: white;
+  color:$green;
+}
+
