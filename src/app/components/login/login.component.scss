@@ -1,4 +1,16 @@
+$grey: #878c88;
 $green: #85e697;
+$bright: #FFFFFF;
+$dark:#000000;
+$block-font:"Oswald";
+$decorative-fonts:"Quattrocento";
+$small-font-size:.8em;
+$middle-font-size:1em;
+$large-font-size:1.3em;
+
+p,h1{
+  font-family: $decorative-fonts;
+}
 
 .global-container-login{
   display: flex;

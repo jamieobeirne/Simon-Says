@@ -174,6 +174,11 @@ export class AuthService {
     console.log("From Service, getListOfUsers(): ", info);
     return info;
   }
+
+
+  openLoginPage(){
+    this.router.navigate(['register']);
+  }
 } 
 
 

@@ -1,23 +1,50 @@
 $grey: #878c88;
+$light-grey: #abafac;
 $green: #85e697;
-$white: #FFFFFF;
+$bright: #FFFFFF;
+$dark:#000000;
 $block-font:"Oswald";
 $decorative-fonts:"Quattrocento";
 $small-font-size:.8em;
 $middle-font-size:1em;
+$large-font-size:1.3em;
+
+p,h1{
+  font-family: $decorative-fonts;
+}
 
 .global-container-dashboard{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-top: 2em;
 }
 
+.central-container-dashboard{
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 3em;
+}
+
+.left-container, 
+  .right-container{
+   width: 50%;
+}
+
+.right-container{
+  margin-right: 15em;
+}
+
 .speaking-button{
-  background-color: $green;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  font-size: $middle-font-size ;
+  color: $bright;
+  background-color: $dark;
+  margin-top: 1.5em;
+  font-size: $large-font-size ;
+  border: $grey solid 1px;
+  width: 50%;
+  max-width: 400px;
+}
+
+.speaking-button:hover{
+  color: $dark;
+  background-color:$grey ;
 }
 
 .dashboard-link:hover  {
@@ -30,20 +57,29 @@ $middle-font-size:1em;
 
 mat-card {
   margin-top: 1em;
-  width: 70%;
+  width: 55%;
   margin-bottom: 1em;
+  padding-right: 2em;
+  padding-left: 2em;
 }
 
 .mat-list-title{
-  font-size: $small-font-size
+  font-size: $small-font-size;
 }
 
 .mat-list-item{
-  font-size: $middle-font-size;
+  font-size: $small-font-size;
+  border-bottom: 1px solid $light-grey;
 }
 
 .edit-delete-button{
   background-color: white;
   color:$green;
   margin-right: 2em;
+}
+
+.center{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
 }

@@ -24,7 +24,7 @@ export class VoiceToolComponent implements OnInit {
 
   init(): void {
     this.recognition.interimResults = true;
-    this.recognition.lang = 'en-US';
+    this.recognition.lang = 'en-US'; //langauge option
 
     this.recognition.addEventListener('result', (e: any) => {
       const transcript = Array.from(e.results)
@@ -55,7 +55,7 @@ export class VoiceToolComponent implements OnInit {
           this.error = true;
         } else {
           this.stop();
-          this.text = 'I\'m no sure if I understood that.';
+          this.text = 'I\'m not sure if I understood that.';
           this.error = true;
         }
       }

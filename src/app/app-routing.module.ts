@@ -7,10 +7,9 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { VoiceToolComponent } from './components/voice-tool/voice-tool.component';
-import { AuthGuard } from './shared/guard/auth.guard';
+//import { AuthGuard } from './shared/guard/auth.guard';
 import { ListComponent } from './components/list/list.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatIconModule} from '@angular/material/icon';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },

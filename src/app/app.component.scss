@@ -1,14 +1,37 @@
 
 $grey: #878c88;
+$light-grey: #abafac;
 $green: #85e697;
+$bright: #FFFFFF;
+$dark:#000000;
 $block-font:"Oswald";
 $decorative-fonts:"Quattrocento";
+$small-font-size:.8em;
+$middle-font-size:1em;
+$large-font-size:1.3em;
+
+p,h1{
+  font-family: $decorative-fonts;
+}
 
 .top-navigation{
   list-style-type: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 5.5em;
+  border-bottom: none;
+  position: relative;
+}
+
+.top-navigation::after{
+  content:"";
+  background: -webkit-linear-gradient(left, $bright 0%, $light-grey 47%, $bright 100%);
+  display: block;
+  height:6px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 .icon-title-container{
@@ -24,7 +47,7 @@ $decorative-fonts:"Quattrocento";
 
 .navbar-title{
   color:$green;
-  font-size: 3.2em;
+  font-size: 2.8em;
   font-family: $block-font;
   margin: 0;
 }
@@ -43,12 +66,12 @@ $decorative-fonts:"Quattrocento";
 .top-navigation a{
   color:$green;
   text-decoration: none;
-  font-size: 1.6em;
+  font-size: 1.3em;
   font-family: $block-font ;
 }
 
 .top-navigation a:hover {
-  color: rgb(96, 53, 227);
+  color: $dark;
 }
 
 .navbar-background{

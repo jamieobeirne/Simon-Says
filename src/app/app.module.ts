@@ -17,14 +17,18 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { VoiceToolComponent } from './components/voice-tool/voice-tool.component';
+import { ListComponent } from './components/list/list.component';
 // service
 import { AuthService } from './shared/services/auth.service';
-import { ListComponent } from './components/list/list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//angular material
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
+import { FontAwesomeModule,FaIconLibrary } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -50,9 +54,12 @@ import {MatListModule} from '@angular/material/list';
     MatTableModule,
     MatButtonModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatIconModule,
+    FontAwesomeModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
 })
+
 export class AppModule {}

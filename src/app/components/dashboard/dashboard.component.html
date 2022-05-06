@@ -1,37 +1,44 @@
   
 <div class="global-container-dashboard">
-  <!--
+
+  <div class="center">
+    <h1>User Page!</h1>
+  </div>
+
+  <div class="central-container-dashboard">
+
+    <div class ="right-container">
+      <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will 
+        give you a complete account of the system, and expound the actual</p>
+      <button mat-button (click)="openVoiceTool()" 
+      class="speaking-button">Go to Speaking Tool</button>
+    </div>
+    
+    <div class ="left-container center">
+      <mat-card class="card-background-color">
+        <mat-card-title class="mat-list-title">Your profile information:</mat-card-title>
+        <mat-card-actions>
+          <mat-list role="list">
+            <mat-list-item role="listitem" class="mat-list-item">ID:&nbsp;&nbsp;<strong>{{ authService.userInfo.uid}}</strong> </mat-list-item>
+            <mat-list-item role="listitem">Email:&nbsp;&nbsp;<strong>{{&nbsp;authService.userInfo.email}}</strong></mat-list-item>
+            <mat-list-item role="listitem">Verified:&nbsp;&nbsp;<strong>{{authService.userInfo.emailVerified}}</strong></mat-list-item>
+            <mat-list-item role="listitem">Role:&nbsp;&nbsp;<strong *ngFor="let role of authService.userInfo.roles | keyvalue">{{role.key}}</strong></mat-list-item>
+          </mat-list>
+        </mat-card-actions>
+      
+        <button mat-button><fa-icon [icon]="faTrashCan" size="lg"></fa-icon></button>
+        <button mat-button><fa-icon [icon]="faPencil" size="lg"></fa-icon></button>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+
+<!--
   <button *ngIf="authService.canView"
   (click)="editPost()">
   Edit Post
   </button>
   -->
-  <h1 class="h2">User Page!</h1>
-  <button mat-button (click)="openVoiceTool()" 
-    class="speaking-button">Go to Speaking Tool</button>
-  <mat-card class="card-background-color">
-        <mat-card-title class="mat-list-title">This is your user information from the database.</mat-card-title>
-        <mat-card-actions>
-          <mat-list role="list">
-            <mat-list-item role="listitem" class="mat-list-item">Your ID: <strong>{{ authService.userInfo.uid}}</strong> </mat-list-item>
-            <mat-list-item role="listitem">Your Email:<strong>{{ authService.userInfo.email}}</strong></mat-list-item>
-            <mat-list-item role="listitem">Verified:<strong>{{authService.userInfo.emailVerified}}</strong></mat-list-item>
-            <mat-list-item role="listitem">Your Role:<strong *ngFor="let role of authService.userInfo.roles | keyvalue">{{role.key}}</strong></mat-list-item>
-          </mat-list>
-        </mat-card-actions>
-        <button mat-button class="edit-delete-button">Edit</button>
-        <button mat-button class="edit-delete-button">Delete Account</button>
-  </mat-card>
-  <!--
-  <div class="dashboard-link-container">
-    <input
-      class="dashboard-link"
-      type="button"
-      value=""
-      
-    />
-  </div>
-  -->
-</div>
  
 
