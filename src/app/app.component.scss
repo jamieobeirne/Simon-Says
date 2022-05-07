@@ -26,9 +26,9 @@ p,h1{
 
 .top-navigation::after{
   content:"";
-  background: -webkit-linear-gradient(left, $bright 0%, $light-grey 47%, $bright 100%);
+  background: -webkit-linear-gradient(left, $dark 0%, $light-grey 47%, $dark 100%);
   display: block;
-  height:6px;
+  height:4px;
   width: 100%;
   position: absolute;
   bottom: 0;

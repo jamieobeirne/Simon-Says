@@ -31,10 +31,7 @@ p,h1{
 }
 
 .welcome-message{
-  position:relative;
-  bottom: 350px;
-  color: white;
-  right: 310px;
+  color: $grey;
   font-size: 2.9em;
   text-shadow: 1px 1px 2px $green;
 }
@@ -46,15 +43,13 @@ p,h1{
   border: $grey solid 1px;
   width: 50%;
   max-width: 400px;
-  position:relative;
-  bottom: 340px;
-  right: 340px;
+  border: 1px purple solid;
 }
 
 .sign-up-button-small{
   color: $bright;
   background-color: $dark;
-  margin-top: 2.5em;
+  margin-top: 1em;
   font-size: $middle-font-size ;
   border: $grey solid 1px;
   width: 30%;

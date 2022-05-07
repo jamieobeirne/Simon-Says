@@ -60,7 +60,8 @@ export class AuthService {
         .then( (result) => {
           this.userData.subscribe(data => {
           this.userInfo = data;
-          this.authBehaviorSubject.next({isLoggedIn:true, isAdmin:this.userInfo.roles.admin, isUser:this.userInfo.roles.user});});
+          this.authBehaviorSubject.next({isLoggedIn:true, 
+            isAdmin:this.userInfo.roles.admin, isUser:this.userInfo.roles.user});});
           this.router.navigate(['dashboard']);
       })
       .catch((error) => {

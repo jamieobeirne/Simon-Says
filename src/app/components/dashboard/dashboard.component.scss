@@ -40,6 +40,7 @@ p,h1{
   border: $grey solid 1px;
   width: 50%;
   max-width: 400px;
+  min-width: 300px;
 }
 
 .speaking-button:hover{
@@ -51,8 +52,9 @@ p,h1{
   color: rgb(96, 53, 227);
 }
 
-.card-background-color{
+.card-background{
   background-color: $grey;
+  min-width: 400px;
 }
 
 mat-card {
