@@ -2,8 +2,10 @@ $grey: #878c88;
 $green: #85e697;
 $bright: #FFFFFF;
 $dark:#000000;
+
 $block-font:"Oswald";
 $decorative-fonts:"Quattrocento";
+
 $small-font-size:.8em;
 $middle-font-size:1em;
 $large-font-size:1.3em;
@@ -43,7 +45,7 @@ p,h1{
   border: $grey solid 1px;
   width: 50%;
   max-width: 400px;
-  border: 1px purple solid;
+  border: $green solid 1px;
 }
 
 .sign-up-button-small{
@@ -67,4 +69,5 @@ p,h1{
   border-bottom:solid 1px $grey;
   padding-bottom: 3em;
   text-align: left;
+  margin-top:7.5em;
 }
