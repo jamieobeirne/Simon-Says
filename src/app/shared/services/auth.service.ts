@@ -81,6 +81,7 @@ export class AuthService {
       roles:  {
         user: true,
       }
+    
     };
     return userRef.set(userData, {
       merge: true,
