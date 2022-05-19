@@ -22,7 +22,7 @@ export class AuthService {
   
   userData: Observable<User | undefined | null>; 
   userInfo: any = {};
-  authBehaviorSubject = new BehaviorSubject({isLoggedIn:false,isAdmin:false, isUser:false});
+  authBehaviorSubject = new BehaviorSubject({isLoggedIn:false,isAdmin:false, isUser:false, isActive:false});
 
   //private dbPath: string = "/users";
 
@@ -60,8 +60,9 @@ export class AuthService {
         .then( (result) => {
           this.userData.subscribe(data => {
           this.userInfo = data;
+          console.log(data);
           this.authBehaviorSubject.next({isLoggedIn:true, 
-            isAdmin:this.userInfo.roles.admin, isUser:this.userInfo.roles.user});});
+            isAdmin:this.userInfo.roles.admin, isUser:this.userInfo.roles.user, isActive:this.userInfo.active});});
           this.router.navigate(['dashboard']);
       })
       .catch((error) => {
@@ -80,7 +81,8 @@ export class AuthService {
       emailVerified: true,
       roles:  {
         user: true,
-      }
+      },
+      active: true
     
     };
     return userRef.set(userData, {
@@ -108,7 +110,7 @@ export class AuthService {
   logOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.authBehaviorSubject.next({isLoggedIn:false,isAdmin:false,isUser:false});
+      this.authBehaviorSubject.next({isLoggedIn:false,isAdmin:false,isUser:false, isActive:false});
     });
   }
 

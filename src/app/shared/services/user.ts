@@ -6,8 +6,9 @@ export interface Roles {
 }
 
 export interface User {
+  uid: string;
   email: string | null;
   emailVerified: boolean;
   roles: Roles;
-  uid: string;
+  active: boolean;
 }

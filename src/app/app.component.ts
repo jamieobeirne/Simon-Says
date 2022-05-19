@@ -13,12 +13,14 @@ export class AppComponent {
   private roles: string[] = [];
   isLoggedIn: boolean = false;
   isAdmin:boolean = false;
+  isActive:boolean = true;
   
   constructor(public authService: AuthService, private router: Router) { 
     //this.isLoggedIn = false;
     this.authService.authBehaviorSubject.subscribe((data) => {
       this.isLoggedIn = data.isLoggedIn;
       this.isAdmin = data.isAdmin;
+      this.isActive = data.isActive; 
     })    
   }
 
