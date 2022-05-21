@@ -1,37 +1,51 @@
 
-<div id="app">
-  <nav>
-      <div class="top-navigation navbar-background">
 
-        <div class="icon-title-container">
-          <li >
-            <a href="/home" class="" routerLink="home" (click)="logout()">
-              <img class="icon" src="../assets/simons-says.webp"  width="90"  alt="Simon Says icon"></a>
-          </li>
-          <h1 class="navbar-title">Simon Says</h1>
-        </div>
-        
-        <div class="nav-links-container">
-          <!--
-          <li class="">
-            <a href="/register" class="nav-link-item" *ngIf="!isLoggedIn" routerLink="register">Sing Up</a>
-          </li>
-          -->
+<nav>
+  <div class="top-navigation navbar-background">
+      
+    <div class="icon-title-container">
+      <li >
+        <a href="/home" class="" 
+        routerLink="home" 
+        (click)="logout()">
+        <img class="icon" 
+        src="../assets/simons-says.webp"  
+        width="90"  
+        alt="Simon Says icon">
+        </a>
+      </li>
+      <h1 class="navbar-title">Simon Says</h1>
+    </div>
+      
+    <div class="nav-links-container">
+      <li>
+        <a href="/login" 
+        class="nav-link-item" 
+        *ngIf="!isLoggedIn" 
+        routerLink="login">Sign In</a>
+      </li>
+      <li>
+        <a class="nav-link-item" 
+        *ngIf="isLoggedIn" 
+        (click)="logout()">LogOut</a>
+      </li>
+      <li>
+        <a class="nav-link-item" 
+        *ngIf="isLoggedIn && isAdmin" 
+        routerLink="list">List of Users</a>
+      </li>
+    </div>
 
-          <li class="">
-            <a href="/login" class="nav-link-item" *ngIf="!isLoggedIn" routerLink="login">Sign In</a>
-          </li>
-          <li class="">
-            <a class="nav-link-item" *ngIf="isLoggedIn" (click)="logout()">LogOut</a>
-          </li>
-          <li class="">
-            <a class="nav-link-item" *ngIf="isLoggedIn && isAdmin" routerLink="list">List of Users</a>
-          </li>
-        </div>
-        
-      </div>
-  </nav>
+  </div>
+</nav>
 
-</div> 
 
 <router-outlet></router-outlet>
+
+
+<footer>
+  <div >
+    <img class="bw-logo" src="../assets/bw.logo.webp" alt="Black and white Simon Says logo">
+  </div>
+  <p>footer text / icons / links here</p>
+</footer>

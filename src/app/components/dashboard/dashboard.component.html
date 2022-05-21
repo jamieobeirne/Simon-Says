@@ -12,7 +12,11 @@
         dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
         proident.</p>
       <button mat-button (click)="openVoiceTool()" 
-      class="speaking-button">Go to Speaking Tool</button>
+      class="speaking-button">Accuracy Tool</button>
+      <button mat-button (click)="openVoiceTool()" 
+        class="speaking-button">Prounciation Tool</button>
+      <button mat-button (click)="openVoiceTool()" 
+        class="speaking-button">Speech To Text Tool</button>
     </div>
     
     <div class ="left-container center">
@@ -20,11 +24,13 @@
         <mat-card-title class="mat-list-title">Your profile information:</mat-card-title>
         <mat-card-actions>
           <mat-list role="list">
-            <mat-list-item role="listitem" class="mat-list-item">ID:&nbsp;&nbsp;<strong>{{ authService.userInfo.uid}}</strong> </mat-list-item>
-            <mat-list-item role="listitem">Email:&nbsp;&nbsp;<strong>{{&nbsp;authService.userInfo.email}}</strong></mat-list-item>
-            <mat-list-item role="listitem">Verified:&nbsp;&nbsp;<strong>{{authService.userInfo.emailVerified}}</strong></mat-list-item>
-            <mat-list-item role="listitem">Active:&nbsp;&nbsp;<strong>{{authService.userInfo.active}}</strong></mat-list-item>
-            <mat-list-item role="listitem">Role:&nbsp;&nbsp;<strong *ngFor="let role of authService.userInfo.roles | keyvalue">{{role.key}}</strong></mat-list-item>
+            <mat-list-item role="listitem">Display name:&nbsp;&nbsp;{{&nbsp;authService.userInfo.displayName}}</mat-list-item>
+            <mat-list-item role="listitem">Email:&nbsp;&nbsp;{{&nbsp;authService.userInfo.email}}</mat-list-item>
+            <mat-list-item role="listitem" class="mat-list-item">ID:&nbsp;&nbsp;{{ authService.userInfo.uid}} </mat-list-item>
+            <mat-list-item role="listitem">Verified:&nbsp;&nbsp;{{authService.userInfo.emailVerified}}</mat-list-item>
+            <mat-list-item role="listitem">Disabled:&nbsp;&nbsp;{{authService.userInfo.isDisabled }}</mat-list-item>
+            <!--<mat-list-item role="listitem">Role:&nbsp;&nbsp;<strong *ngFor="let role of authService.userInfo.roles | keyvalue">{{role.key}}</strong></mat-list-item>-->
+            <mat-list-item role="listitem">Role:&nbsp;&nbsp;<span *ngFor="let role of authService.userInfo.roles | keyvalue">{{role.key}}</span></mat-list-item>
           </mat-list>
         </mat-card-actions>
       

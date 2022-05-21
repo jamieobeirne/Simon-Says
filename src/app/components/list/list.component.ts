@@ -10,7 +10,7 @@ import { getAuth } from 'firebase/auth';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  displayedColumns: string[] = ['uid', 'email', 'verified', 'active', 'roles', 'actions'];
+  displayedColumns: string[] = ['displayName','email', 'uid', 'verified', 'active', 'roles', 'actions'];
   userList: User[] = [];
 
   constructor(private authService : AuthService) {
@@ -37,8 +37,7 @@ export class ListComponent implements OnInit {
   }
 
   disableUser(uid:string):void{
-    getAuth().
-      
+    //getAuth(). 
   }
 
 

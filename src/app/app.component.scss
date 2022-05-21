@@ -1,6 +1,6 @@
 
 $dark:#000000;
-$grey: #878c88;
+$grey: #3c3d41;
 $light-grey: #abafac;
 $green: #85e697;
 $bright: #FFFFFF;
@@ -16,6 +16,8 @@ p,h1{
   font-family: $decorative-fonts;
 }
 
+
+/*main navigation*/
 .top-navigation{
   list-style-type: none;
   display: flex;
@@ -78,4 +80,19 @@ p,h1{
 
 .navbar-background{
   background-color: $grey;
+}
+
+/*footer*/
+footer{
+  padding-top: 3em;
+  padding-left: 3em;
+  padding-right:3em;
+  padding-bottom:5em;
+  background: $grey;
+  height:20em;
+  color: white;
+}
+
+.bw-logo{
+  max-height: 3em;
 }

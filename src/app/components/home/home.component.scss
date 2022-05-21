@@ -1,4 +1,5 @@
-$grey: #878c88;
+$grey: #3c3d41;
+$light-grey: #abafac;
 $green: #85e697;
 $bright: #FFFFFF;
 $dark:#000000;
@@ -21,7 +22,7 @@ p,h1{
 }
 
 .background-image{
-  background: url(../../../assets/large-happy.webp); 
+  background: url(../../../assets/large-happy-homepage.webp); 
   background-size: cover; /* or contain depending on what you want */
   background-position: center center;
   background-repeat: no-repeat;
@@ -64,10 +65,29 @@ p,h1{
   background-color:$grey ;
 }
 
-.message{
-  width:1200px;
-  border-bottom:solid 1px $grey;
-  padding-bottom: 3em;
-  text-align: left;
-  margin-top:7.5em;
+.message-container{
+  margin-top:4.5em;
+  margin-bottom:3em;
+  max-width: 1100px;
 }
+
+.message-left-aligned, .message-right-aligned{
+  border-bottom:solid 1px $light-grey;
+  padding-bottom: 3em;
+  margin-top:4.5em;
+}
+
+.message-left-aligned{
+  text-align: left;
+}
+
+.message-right-aligned{
+  text-align: right;
+}
+
+.message-left-aligned:last-of-type{
+  border-bottom: none;
+}
+
+
+

@@ -1,4 +1,4 @@
-$grey: #878c88;
+$grey: #3c3d41;
 $green: #85e697;
 $bright: #FFFFFF;
 $dark:#000000;
@@ -34,11 +34,16 @@ th{
 }
 
 td{
-  font-size: $middle-font-size ;
+  font-size: $small-font-size ;
 }
 
 .mat-button{
+  margin-left: 1.1em;
   background-color: white;
   color:$green;
+}
+
+th:last-of-type{
+  padding-left: 1.1em;
 }
 
