@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../shared/services/user';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { getAuth } from 'firebase/auth';
+
 
 @Component({
   selector: 'app-list',
@@ -8,7 +10,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  displayedColumns: string[] = ['uid', 'email', 'verified', 'roles', 'actions'];
+  displayedColumns: string[] = ['uid', 'email', 'verified', 'active', 'roles', 'actions'];
   userList: User[] = [];
 
   constructor(private authService : AuthService) {
@@ -33,4 +35,11 @@ export class ListComponent implements OnInit {
         console.log("From List Component, value of roles: ", this.userList)
       })
   }
+
+  disableUser(uid:string):void{
+    getAuth().
+      
+  }
+
+
 }

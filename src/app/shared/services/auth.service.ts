@@ -13,6 +13,8 @@ import { of } from 'rxjs';
 import {AppComponent} from "../../app.component"
 import { BehaviorSubject, Subject } from 'rxjs';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { getAuth } from 'firebase/auth';
+
 
 
 @Injectable({
@@ -22,7 +24,7 @@ export class AuthService {
   
   userData: Observable<User | undefined | null>; 
   userInfo: any = {};
-  authBehaviorSubject = new BehaviorSubject({isLoggedIn:false,isAdmin:false, isUser:false, isActive:false});
+  authBehaviorSubject = new BehaviorSubject({isLoggedIn:false,isAdmin:false, isUser:false, isDisabled:false});
 
   //private dbPath: string = "/users";
 
@@ -32,8 +34,9 @@ export class AuthService {
       private router: Router,
       private db: AngularFireDatabase,
       //private db: AngularFirestore,
-      ) {   
-
+      ) {  
+      
+  
       this.userData = this.afAuth.authState.pipe(
         switchMap(user => {
           if (user) {
@@ -60,9 +63,8 @@ export class AuthService {
         .then( (result) => {
           this.userData.subscribe(data => {
           this.userInfo = data;
-          console.log(data);
           this.authBehaviorSubject.next({isLoggedIn:true, 
-            isAdmin:this.userInfo.roles.admin, isUser:this.userInfo.roles.user, isActive:this.userInfo.active});});
+            isAdmin:this.userInfo.roles.admin, isUser:this.userInfo.roles.user, isDisabled:this.userInfo.isDisabled});});
           this.router.navigate(['dashboard']);
       })
       .catch((error) => {
@@ -71,18 +73,20 @@ export class AuthService {
   }
 
 
-  SetUserData(user: any) {
+  SetUserData(user: any, displayName: string) {
+    console.log(user);
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
     );
     const userData: User = {
       uid: user.uid,
       email: user.email,
+      displayName: displayName,
       emailVerified: true,
-      roles:  {
+      roles:  {        
         user: true,
-      },
-      active: true
+        },
+      isDisabled: false
     
     };
     return userRef.set(userData, {
@@ -91,26 +95,34 @@ export class AuthService {
   }
   
 
-  register(email: string, password: string) {
+  register(email: string, password: string, displayName:string) {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
         .then((result) => {
+        
           /* Call the SendVerificaitonMail() function when new user sign
           up and returns promise */
           //this.SendVerificationMail();
-          this.SetUserData(result.user);
+  
+          this.SetUserData(result.user, displayName);
           this.router.navigate(['login']);
         })
         
       .catch((error) => {
+        console.log(error);
         window.alert(error.message);
       });
   }
+  
 
   logOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.authBehaviorSubject.next({isLoggedIn:false,isAdmin:false,isUser:false, isActive:false});
+      this.authBehaviorSubject.next({
+        isLoggedIn:false,
+        isAdmin:false,
+        isUser:false, 
+        isDisabled:false});
     });
   }
 
@@ -136,6 +148,7 @@ export class AuthService {
     return false
   }
 
+  
   openVoiceTool() {
     this.router.navigate(['voice-tool']);
   }
@@ -175,7 +188,6 @@ export class AuthService {
       .then(result=>{
         return result.docs.map(item=>item.data() as User)
       });
-    console.log("From Service, getListOfUsers(): ", info);
     return info;
   }
 
