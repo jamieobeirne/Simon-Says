@@ -24,29 +24,40 @@
         <mat-card-title class="mat-list-title">Your profile information:</mat-card-title>
         <mat-card-actions>
           <mat-list role="list">
+
+            <!--
             <mat-list-item role="listitem">Display name:&nbsp;&nbsp;{{&nbsp;authService.userInfo.displayName}}</mat-list-item>
-            <mat-list-item role="listitem">Email:&nbsp;&nbsp;{{&nbsp;authService.userInfo.email}}</mat-list-item>
-            <mat-list-item role="listitem" class="mat-list-item">ID:&nbsp;&nbsp;{{ authService.userInfo.uid}} </mat-list-item>
-            <mat-list-item role="listitem">Verified:&nbsp;&nbsp;{{authService.userInfo.emailVerified}}</mat-list-item>
-            <mat-list-item role="listitem">Disabled:&nbsp;&nbsp;{{authService.userInfo.isDisabled }}</mat-list-item>
-            <!--<mat-list-item role="listitem">Role:&nbsp;&nbsp;<strong *ngFor="let role of authService.userInfo.roles | keyvalue">{{role.key}}</strong></mat-list-item>-->
-            <mat-list-item role="listitem">Role:&nbsp;&nbsp;<span *ngFor="let role of authService.userInfo.roles | keyvalue">{{role.key}}</span></mat-list-item>
+            -->
+            
+            <mat-list-item role="listitem">Display name:&nbsp;&nbsp;
+              <input
+              type="displayName"
+              class="formControl"
+              value= '{{authService.userInfo.displayName}}'
+              #displayName
+              required
+              />
+            </mat-list-item>
+
+            <mat-list-item role="listitem">Email: {{ authService.userInfo.email}}</mat-list-item>
+            <mat-list-item role="listitem" class="mat-list-item">ID: {{authService.userInfo.uid}} </mat-list-item>
+            <mat-list-item role="listitem">Verified: {{authService.userInfo.emailVerified}}</mat-list-item>
+            <mat-list-item role="listitem">Disabled: {{authService.userInfo.isDisabled}}</mat-list-item>
+            <mat-list-item role="listitem">Role: <span *ngFor="let role of authService.userInfo.roles | keyvalue">{{role.key}}</span></mat-list-item>
           </mat-list>
         </mat-card-actions>
       
-        <button mat-button><fa-icon [icon]="faTrashCan" size="lg"></fa-icon></button>
-        <button mat-button><fa-icon [icon]="faPencil" size="lg"></fa-icon></button>
+        <button mat-button> <fa-icon [icon]="faTrashCan" size="lg" (click)="disableUser(authService.userInfo.uid)" ></fa-icon></button>
+        <button mat-button><fa-icon [icon]="faPencil" size="lg" (click)="editName(authService.userInfo.uid, displayName.value)" ></fa-icon></button>
+
+  
+
       </mat-card>
     </div>
   </div>
 </div>
 
 
-<!--
-  <button *ngIf="authService.canView"
-  (click)="editPost()">
-  Edit Post
-  </button>
-  -->
+
  
 

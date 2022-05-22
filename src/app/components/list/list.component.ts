@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../shared/services/user';
 import { AuthService } from 'src/app/shared/services/auth.service';
-import { getAuth } from 'firebase/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
 
 
 @Component({
@@ -9,35 +10,40 @@ import { getAuth } from 'firebase/auth';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
+
+
 export class ListComponent implements OnInit {
   displayedColumns: string[] = ['displayName','email', 'uid', 'verified', 'active', 'roles', 'actions'];
   userList: User[] = [];
+  enable: Boolean = true;
 
-  constructor(private authService : AuthService) {
-   
-  }
+
+  constructor(private authService : AuthService, private afs: AngularFirestore) {}
+  
 
   ngOnInit(): void {
   
-    //this.userList = this.authService.getListOfUsers()
     this.authService.getListOfUsers()
       .then(result=> {
         this.userList = result
-        
-        this.userList[0].roles = { user: false,
-          professional: false,
-          admin: true} 
-
-        this.userList[1].roles = { user: true,
-          professional: false,
-          admin:false} 
-          
-        console.log("From List Component, value of roles: ", this.userList)
+  
       })
   }
 
+  
   disableUser(uid:string):void{
-    //getAuth(). 
+    this.enable = !this.enable;
+    let newIndex = this.userList.findIndex(x => x.uid == uid);
+    let user = this.userList[newIndex];
+
+    this.afs.collection("/users")
+    .doc(uid)
+    .update({isDisabled: !user.isDisabled})
+
+    .then(result =>{
+      this.userList[newIndex].isDisabled = !user.isDisabled;
+      
+    })
   }
 
 

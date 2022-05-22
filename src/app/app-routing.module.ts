@@ -9,6 +9,7 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { VoiceToolComponent } from './components/voice-tool/voice-tool.component';
 //import { AuthGuard } from './shared/guard/auth.guard';
 import { ListComponent } from './components/list/list.component';
+import { DisabledComponent } from './components/disabled/disabled.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'verify-email-address', component: VerifyEmailComponent },
   { path: 'home', component: HomeComponent },
   { path: 'voice-tool', component: VoiceToolComponent },
-  { path: 'list', component: ListComponent }
+  { path: 'list', component: ListComponent },
+  { path: 'disabled', component: DisabledComponent }
 ];
 
 @NgModule({

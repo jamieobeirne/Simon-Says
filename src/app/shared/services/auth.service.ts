@@ -26,35 +26,33 @@ export class AuthService {
   userInfo: any = {};
   authBehaviorSubject = new BehaviorSubject({isLoggedIn:false,isAdmin:false, isUser:false, isDisabled:false});
 
-  //private dbPath: string = "/users";
 
-    constructor(
-      private afAuth: AngularFireAuth, 
-      private afs: AngularFirestore,
-      private router: Router,
-      private db: AngularFireDatabase,
-      //private db: AngularFirestore,
-      ) {  
-      
-  
-      this.userData = this.afAuth.authState.pipe(
-        switchMap(user => {
-          if (user) {
-              return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
-          } else {
-              return of(null);
-          }  
-        })
-      )
+  constructor(
+    private afAuth: AngularFireAuth, 
+    private afs: AngularFirestore,
+    private router: Router,
+    private db: AngularFireDatabase,
+    ) {  
+    
 
-      this.userData.subscribe(data => {
-        if (data) {
-            localStorage.setItem('user', JSON.stringify(data));
+    this.userData = this.afAuth.authState.pipe(
+      switchMap(user => {
+        if (user) {
+            return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
         } else {
-            localStorage.setItem('user', 'null');
-        } 
+            return of(null);
+        }  
       })
-    }
+    )
+
+    this.userData.subscribe(data => {
+      if (data) {
+          localStorage.setItem('user', JSON.stringify(data));
+      } else {
+          localStorage.setItem('user', 'null');
+      } 
+    })
+  }
 
 
   login(email: string, password: string) {
@@ -63,9 +61,20 @@ export class AuthService {
         .then( (result) => {
           this.userData.subscribe(data => {
           this.userInfo = data;
-          this.authBehaviorSubject.next({isLoggedIn:true, 
-            isAdmin:this.userInfo.roles.admin, isUser:this.userInfo.roles.user, isDisabled:this.userInfo.isDisabled});});
-          this.router.navigate(['dashboard']);
+
+          if (this.userInfo.isDisabled){
+  
+            this.router.navigate(['disabled']);
+            return;
+          } 
+          this.authBehaviorSubject.next({
+            isLoggedIn:true, 
+            isAdmin:this.userInfo.roles.admin, 
+            isUser:this.userInfo.roles.user, 
+            isDisabled:this.userInfo.isDisabled});
+            this.router.navigate(['dashboard']);
+          });
+          
       })
       .catch((error) => {
         window.alert(error.message);
@@ -148,7 +157,6 @@ export class AuthService {
     return false
   }
 
-  
   openVoiceTool() {
     this.router.navigate(['voice-tool']);
   }
@@ -181,7 +189,6 @@ export class AuthService {
       });*/
   }
 
-
   //to display users for the admin list page
   async getListOfUsers():Promise<User[]>{
     let info = await this.afs.collection("/users").get().toPromise()
@@ -191,10 +198,10 @@ export class AuthService {
     return info;
   }
 
-
   openLoginPage(){
     this.router.navigate(['register']);
   }
+
 } 
 
 

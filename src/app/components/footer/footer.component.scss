@@ -1,0 +1,62 @@
+$dark:#000000;
+$grey: #3c3d41;
+$light-grey: #abafac;
+$green: #85e697;
+$bright: #FFFFFF;
+
+
+$block-font:"Oswald";
+$decorative-fonts:"Quattrocento";
+$small-font-size:.8em;
+$middle-font-size:1em;
+$large-font-size:1.3em;
+
+
+footer{
+  padding-top: 3em;
+  padding-left: 5em;
+  padding-right:5em;
+  padding-bottom:5em;
+  background: $grey;
+  height:30em;
+  color: white;
+  font-size: .7em;
+ 
+}
+
+.footer-container{
+  display: flex;
+}
+
+.footer-box{
+  width: 33.3%;
+  border-right: solid 1px $light-grey;
+  padding-left: 5em;
+  height:auto;
+}
+
+.footer-box:last-of-type{
+  border-right: none;
+}
+
+
+.box-one{
+ display: flex;
+ align-items: center;
+}
+
+.bw-logo{
+  max-height: 2.4em;
+}
+
+.title{
+  color:$bright;
+  font-size:1.6em;
+  font-family: $block-font;
+  margin-left: .5em;
+}
+
+.rights-message{
+color:$light-grey
+
+}

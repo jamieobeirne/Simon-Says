@@ -19,24 +19,49 @@ p,h1{
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 5em;
 }
+
+
+/*
+.background-image{
+  background: url(../../../assets/large-happy-homepage.webp); 
+  background-size:  100% 100%; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding:0;
+  height:40vh;
+  width: 100vw;
+}
+*/
+/* cover or contain depending on what you want */
+
 
 .background-image{
   background: url(../../../assets/large-happy-homepage.webp); 
-  background-size: cover; /* or contain depending on what you want */
-  background-position: center center;
+  background-position: 100%;
   background-repeat: no-repeat;
-  text-align:center;
-  margin:auto;
-  padding:0;
-  height:35vh;
+  background-size: 100% 100%;
+  height:30vh;
   width: 100vw;
 }
 
+
+.welcome-message-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  height:30vh;
+  width: 50%;
+  padding-right: 1%;
+}
+
 .welcome-message{
-  color: $grey;
+  color: $bright;
   font-size: 2.9em;
   text-shadow: 1px 1px 2px $green;
+  margin: 0;
 }
 
 .sign-up-button{
@@ -45,8 +70,10 @@ p,h1{
   font-size: $large-font-size ;
   border: $grey solid 1px;
   width: 50%;
+  height: 1.9em;
   max-width: 400px;
   border: $green solid 1px;
+  margin-top: 1em;
 }
 
 .sign-up-button-small{

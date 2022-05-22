@@ -28,6 +28,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import { FontAwesomeModule,FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { FooterComponent } from './components/footer/footer.component';
+import { DisabledComponent } from './components/disabled/disabled.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { FontAwesomeModule,FaIconLibrary } from '@fortawesome/angular-fontawesom
     HomeComponent,
     VoiceToolComponent,
     ListComponent,
+    FooterComponent,
+    DisabledComponent,
   ],
   imports: [
     BrowserModule,
