@@ -1,7 +1,10 @@
+$dark:#000000;
 $grey: #3c3d41;
+$light-grey: #abafac;
 $green: #85e697;
 $bright: #FFFFFF;
-$dark:#000000;
+
+
 $block-font:"Oswald";
 $decorative-fonts:"Quattrocento";
 $small-font-size:.8em;
@@ -27,3 +30,8 @@ p,h1{
 .password-link:hover  {
   color: rgb(96, 53, 227);
 }
+
+.signIn-input{
+  border: 1px solid $light-grey ;
+}
+

@@ -1,7 +1,10 @@
+$dark:#000000;
 $grey: #3c3d41;
+$light-grey: #abafac;
 $green: #85e697;
 $bright: #FFFFFF;
-$dark:#000000;
+
+
 $block-font:"Oswald";
 $decorative-fonts:"Quattrocento";
 $small-font-size:.8em;
@@ -18,6 +21,7 @@ p,h1{
   align-items: center;
   margin-top: 2em;
   margin-bottom: 9em;
+  height: 50vh;
 }
 
 .register-fields{
@@ -30,4 +34,9 @@ p,h1{
 
 .redirect:hover {
   color: rgb(96, 53, 227);
+}
+
+
+.loginIn-input{
+  border: 1px solid $light-grey ;
 }

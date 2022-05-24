@@ -34,7 +34,11 @@ export class DashboardComponent implements OnInit {
     this.authService.openVoiceTool();
   }
 
-
+  disableConfirmation(uid:string){
+    alert("Are you sure you want to disable your account?");
+    this.disableUser(uid);
+  }
+ 
   disableUser(uid:string):void{
     //let user = this.authService.userInfo;
     this.afs.collection("/users")
