@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore'
 import { AuthService } from '../../shared/services/auth.service';
-import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
-import { faPencil } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import { faPencil } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -14,7 +13,6 @@ import { Router } from '@angular/router';
 
 export class DashboardComponent implements OnInit {
   userInfo: any = {}
-  faTrashCan = faTrashCan; //font awesome
   faPencil = faPencil;
   
 
@@ -25,8 +23,6 @@ export class DashboardComponent implements OnInit {
   }
   
   ngOnInit() {
-    //this.userInfo = this.authService.getUser();
-    //console.log("Dashboard userInfo: ", this.userInfo);
   }
   
   openVoiceTool() {
@@ -34,12 +30,12 @@ export class DashboardComponent implements OnInit {
   }
 
   disableConfirmation(uid:string){
-    alert("Are you sure you want to disable your account?");
-    this.disableUser(uid);
+    if (window.confirm("Do you want to disable your Simon Says account?")) {
+      this.disableUser(uid);
+    }
   }
  
   disableUser(uid:string):void{
-    //let user = this.authService.userInfo;
     this.afs.collection("/users")
     .doc(uid)
     .update({isDisabled: true})
@@ -49,15 +45,7 @@ export class DashboardComponent implements OnInit {
       
     })
   }
-
-  /*  
-  editName(uid:string, newName:string):void{
-    let user = this.authService.userInfo;
-    this.afs.collection("/users")
-    .doc(uid)
-    .update({displayName: newName})
-  }
-  */
+  
   goToEdit(){
     this.router.navigate(['edit']);
   }

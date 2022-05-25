@@ -34,4 +34,8 @@ export class AppComponent {
     //this.isLoggedInBehaviorSubject.next(false);
     this.router.navigate(['home']);
   }
+
+  goToUserPage():void{
+    this.router.navigate(['dashboard']);
+  }
 }

@@ -26,14 +26,20 @@
       </li>
       <li>
         <a class="nav-link-item" 
-        *ngIf="isLoggedIn" 
-        (click)="logout()">LogOut</a>
+        *ngIf="isLoggedIn"  
+        (click)="goToUserPage()">User Page</a>
       </li>
       <li>
         <a class="nav-link-item" 
         *ngIf="isLoggedIn && isAdmin" 
         routerLink="list">List of Users</a>
       </li>
+      <li>
+        <a class="nav-link-item" 
+        *ngIf="isLoggedIn" 
+        (click)="logout()">LogOut</a>
+      </li>
+      
     </div>
 
   </div>

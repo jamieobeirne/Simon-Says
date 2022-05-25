@@ -15,7 +15,6 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 export class ListComponent implements OnInit {
   displayedColumns: string[] = ['displayName','email', 'uid', 'verified', 'active', 'roles', 'actions'];
   userList: User[] = [];
-  enable: Boolean = true;
 
 
   constructor(private authService : AuthService, private afs: AngularFirestore) {}
@@ -32,7 +31,6 @@ export class ListComponent implements OnInit {
 
   
   disableUser(uid:string):void{
-    this.enable = !this.enable;
     let newIndex = this.userList.findIndex(x => x.uid == uid);
     let user = this.userList[newIndex];
 

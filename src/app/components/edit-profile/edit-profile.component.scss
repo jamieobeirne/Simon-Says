@@ -41,3 +41,13 @@ mat-list-item{
   font-size: $small-font-size;
   border-bottom: 1px solid $light-grey;
 }
+
+.mat-button{
+ background: $bright;
+ color:$grey;
+}
+
+.mat-button:hover{
+  background: $green;
+  color:$bright;
+ }

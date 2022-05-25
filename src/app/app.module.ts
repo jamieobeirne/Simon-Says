@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // components
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -39,7 +39,6 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     DashboardComponent,
     RegisterComponent,
     LoginComponent,
-    ForgotPasswordComponent,
     VerifyEmailComponent,
     HomeComponent,
     VoiceToolComponent,
