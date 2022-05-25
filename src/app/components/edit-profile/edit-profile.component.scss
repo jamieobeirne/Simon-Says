@@ -1,0 +1,43 @@
+
+$dark:#000000;
+$grey: #3c3d41;
+$light-grey: #abafac;
+$green: #85e697;
+$bright: #FFFFFF;
+
+
+$block-font:"Oswald";
+$decorative-fonts:"Quattrocento";
+$small-font-size:.8em;
+$middle-font-size:1em;
+$large-font-size:1.3em;
+
+p,h1{
+  font-family: $decorative-fonts;
+}
+
+
+.edit-container{
+margin-top: 4em;
+margin-bottom: 4em;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.edit-card{
+  max-width: 800px;
+  width: 60%;
+  background:$grey;
+}
+
+input{
+  max-width:550px;
+  margin-left: 1.5em;
+  height: 2.5em;
+}
+
+mat-list-item{
+  font-size: $small-font-size;
+  border-bottom: 1px solid $light-grey;
+}

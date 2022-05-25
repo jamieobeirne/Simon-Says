@@ -40,7 +40,7 @@
             <mat-list-item role="listitem" class="mat-list-item">ID: {{authService.userInfo.uid}} </mat-list-item>
             <mat-list-item role="listitem">Verified: {{authService.userInfo.emailVerified}}</mat-list-item>
             <mat-list-item role="listitem" >Disabled: {{authService.userInfo.isDisabled}}</mat-list-item>
-            <mat-list-item role="listitem">Role: <span *ngFor="let role of authService.userInfo.roles | keyvalue">{{role.key}}</span></mat-list-item>
+            <mat-list-item role="listitem">Role: <span *ngFor="let role of authService.userInfo.roles | keyvalue"> {{role.key}}</span></mat-list-item>
           </mat-list>
         </mat-card-actions>
     
