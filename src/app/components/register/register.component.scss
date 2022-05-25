@@ -32,11 +32,29 @@ p,h1{
   color:$green;
 }
 
-.redirect:hover {
-  color: rgb(96, 53, 227);
-}
-
-
 .loginIn-input{
   border: 1px solid $light-grey ;
 }
+
+button{
+  background:$dark;
+  color:$bright;
+  border:$green 1px solid;
+}
+
+button:hover{
+  color: $bright;
+  background-color:$green;
+}
+
+.toSignInContainer{
+  margin-top: 2em;
+}
+
+.toSignIn{
+  font-size:$small-font-size ;
+}
+
+.redirect:hover{
+  color:$light-grey;
+ }

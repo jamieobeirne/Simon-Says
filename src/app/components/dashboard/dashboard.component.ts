@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore'
-import { User } from '../../shared/services/user';
 import { AuthService } from '../../shared/services/auth.service';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { faPencil } from '@fortawesome/free-solid-svg-icons';
@@ -51,12 +50,17 @@ export class DashboardComponent implements OnInit {
     })
   }
 
+  /*  
   editName(uid:string, newName:string):void{
     let user = this.authService.userInfo;
-
     this.afs.collection("/users")
     .doc(uid)
     .update({displayName: newName})
   }
-
+  */
+  goToEdit(){
+    this.router.navigate(['edit']);
+  }
+   
+  
 }

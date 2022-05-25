@@ -1,0 +1,26 @@
+<div class ="left-container center">
+  <mat-card class="card-background">
+    <mat-card-title class="mat-list-title">Your profile information:</mat-card-title>
+    <mat-card-actions>
+      <mat-list role="list">
+        <mat-list-item role="listitem">Display name:&nbsp;&nbsp;
+          <input
+          type="displayName"
+          class="formControl"
+          value= '{{authService.userInfo.displayName}}'
+          #displayName
+          required
+          />
+        </mat-list-item>
+
+        <mat-list-item role="listitem">Email: {{ authService.userInfo.email}}</mat-list-item>
+        <mat-list-item role="listitem" class="mat-list-item">ID: {{authService.userInfo.uid}} </mat-list-item>
+        <mat-list-item role="listitem">Verified: {{authService.userInfo.emailVerified}}</mat-list-item>
+        <mat-list-item role="listitem" >Disabled: {{authService.userInfo.isDisabled}}</mat-list-item>
+        <mat-list-item role="listitem">Role: <span *ngFor="let role of authService.userInfo.roles | keyvalue">{{role.key}}</span></mat-list-item>
+      </mat-list>
+    </mat-card-actions>
+
+    <button mat-button (click)="saveChanges(authService.userInfo.uid, displayName.value)">Save</button>
+  </mat-card>
+</div>

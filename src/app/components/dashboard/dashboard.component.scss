@@ -38,6 +38,11 @@ button{
   color:$dark;
 }
 
+button:hover{
+  color: $bright;
+  background-color:$green;
+}
+
 button:nth-of-type(2){
   margin-left: 1.1em;
 }
@@ -56,10 +61,6 @@ button:nth-of-type(2){
 .speaking-button:hover{
   color: $dark;
   background-color:$grey ;
-}
-
-.dashboard-link:hover  {
-  color: rgb(96, 53, 227);
 }
 
 .card-background{

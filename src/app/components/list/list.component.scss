@@ -45,6 +45,11 @@ td{
   color:$green;
 }
 
+.mat-button:hover{
+  color: $bright;
+  background-color:$green;
+}
+
 th:last-of-type{
   padding-left: 1.1em;
 }

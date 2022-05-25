@@ -10,6 +10,8 @@ import { VoiceToolComponent } from './components/voice-tool/voice-tool.component
 //import { AuthGuard } from './shared/guard/auth.guard';
 import { ListComponent } from './components/list/list.component';
 import { DisabledComponent } from './components/disabled/disabled.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+
 
 
 const routes: Routes = [
@@ -24,7 +26,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'voice-tool', component: VoiceToolComponent },
   { path: 'list', component: ListComponent },
-  { path: 'disabled', component: DisabledComponent }
+  { path: 'disabled', component: DisabledComponent },
+  { path: 'edit', component: EditProfileComponent }
 ];
 
 @NgModule({

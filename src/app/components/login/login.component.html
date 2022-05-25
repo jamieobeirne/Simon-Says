@@ -22,30 +22,27 @@
       />
     </div>
 
-    <div class="formGroup">
+    <div>
+      <!--
       <input
         type="button"
         class=""
         value="Sign In"
         (click)="login(userEmail.value, userPassword.value)"
-      />
+      />-->
+    
+      <button mat-button (click)="login(userEmail.value, userPassword.value)">Sign In</button>
+      <div class="toSignUpContainer">
+        <span class="toSignUp"
+          >Go to <span
+            class="redirect"
+            routerLink="/register">
+            Sign Up</span></span>
+      </div>
     </div>
-
-    <!--
-       <div class="password-link">
-      <span routerLink="/forgot-password">Forgot Password?</span>
-    </div>
-    -->
-   
   </div>
 
-  <div class="redirectToLogin">
-    <span
-      >Go to <span
-        class="redirect"
-        routerLink="/register">
-        Sign Up</span></span>
-  </div>
+  
 </div>
       
   

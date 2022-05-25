@@ -30,6 +30,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { FontAwesomeModule,FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './components/footer/footer.component';
 import { DisabledComponent } from './components/disabled/disabled.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { DisabledComponent } from './components/disabled/disabled.component';
     ListComponent,
     FooterComponent,
     DisabledComponent,
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule,

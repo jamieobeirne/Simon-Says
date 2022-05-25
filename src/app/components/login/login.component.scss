@@ -23,15 +23,37 @@ p,h1{
   margin-bottom: 20%;
 }
 
-.password-link{
-  color:$green
-}
-
-.password-link:hover  {
-  color: rgb(96, 53, 227);
-}
-
 .signIn-input{
   border: 1px solid $light-grey ;
 }
 
+button{
+  background:$dark;
+  color:$bright;
+  border:$green 1px solid;
+}
+
+button:hover{
+  color: $bright;
+  background-color:$green;
+}
+
+.redirectToLogin{
+  color:$dark;
+}
+
+.redirect{
+ color:$green;
+}
+
+.redirect:hover{
+  color:$light-grey;
+ }
+
+.toSignUpContainer{
+  margin-top: 2em;
+}
+
+.toSignUp{
+  font-size:$small-font-size ;
+}
