@@ -31,6 +31,7 @@ import { FontAwesomeModule,FaIconLibrary } from '@fortawesome/angular-fontawesom
 import { FooterComponent } from './components/footer/footer.component';
 import { DisabledComponent } from './components/disabled/disabled.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { UsersManualComponent } from './users-manual/users-manual.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     FooterComponent,
     DisabledComponent,
     EditProfileComponent,
+    UsersManualComponent,
   ],
   imports: [
     BrowserModule,

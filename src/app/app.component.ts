@@ -38,4 +38,9 @@ export class AppComponent {
   goToUserPage():void{
     this.router.navigate(['dashboard']);
   }
+
+  goToUserUsersManual():void{
+    this.router.navigate(['users-manual']);
+  }
+
 }
