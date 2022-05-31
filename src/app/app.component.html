@@ -1,55 +1,116 @@
 
-
 <nav>
   <div class="top-navigation navbar-background">
-      
+    
     <div class="icon-title-container">
       <li >
         <a href="/home" class="" 
         routerLink="home" 
         (click)="logout()">
         <img class="icon" 
-        src="../assets/simons-says.webp"  
-        width="90"  
+        src="../assets/simons-says.webp"    
         alt="Simon Says icon">
         </a>
       </li>
       <h1 class="navbar-title">Simon Says</h1>
     </div>
-      
-    <div class="nav-links-container">
+        
+
+    <div class="large-sreen-nav-links-container">
+      <!--
       <li>
         <a href="/login" 
-        class="nav-link-item" 
+        class="nav-link-item"
         *ngIf="!isLoggedIn" 
         routerLink="login">Sign In</a>
       </li>
+
       <li>
         <a class="nav-link-item" 
         *ngIf="isLoggedIn"  
         (click)="goToUserUsersManual()">User's Manual</a>
       </li>
+
       <li>
         <a class="nav-link-item" 
         *ngIf="isLoggedIn"  
         (click)="goToUserPage()">User Page</a>
       </li>
+
       <li>
         <a class="nav-link-item" 
         *ngIf="isLoggedIn && isAdmin" 
         routerLink="list">List of Users</a>
       </li>
+
       <li>
         <a class="nav-link-item" 
         *ngIf="isLoggedIn" 
         (click)="logout()">LogOut</a>
       </li>
+      -->
+      <!---->
+      <li>
+        <a class="nav-link-item"  
+        (click)="goToUserUsersManual()">User's Manual</a>
+      </li>
       
+      <li>
+        <a class="nav-link-item" 
+        (click)="goToUserPage()">User's Page</a>
+      </li>
+
+      <li>
+        <a class="nav-link-item" 
+        *ngIf="isLoggedIn && isAdmin" 
+        routerLink="list">List of Users</a>
+      </li>
+
+      <li>
+        <a class="nav-link-item" 
+        (click)="logout()">LogOut</a>
+      </li>
+      <!---->
     </div>
+
+
+
+    <div class="hamburger-container">
+      <button mat-button className="hamburger" [matMenuTriggerFor]="menu"><fa-icon [icon]="faBars"></fa-icon></button>
+      <mat-menu #menu="matMenu">
+
+        <button mat-menu-item *ngIf="!isLoggedIn">
+          <a 
+          class="nav-link-item"
+          (click)="goToSignIn()">Sign In</a>
+        </button>
+
+        <button mat-menu-item *ngIf="isLoggedIn">
+          <a class="nav-link-item"   
+          (click)="goToUserUsersManual()">User's Manual</a>
+        </button>
+
+        <button mat-menu-item *ngIf="isLoggedIn" >
+          <a class="nav-link-item" 
+          (click)="goToUserPage()">User Page</a>
+        </button>
+
+        <button mat-menu-item *ngIf="isLoggedIn && isAdmin" >
+          <a class="nav-link-item" 
+          (click)="goToListUsers()">List of Users</a>
+        </button>
+
+        <button mat-menu-item *ngIf="isLoggedIn" >
+          <a class="nav-link-item" 
+          (click)="logout()">LogOut</a>
+        </button>
+ 
+      </mat-menu>
+    </div>
+
 
   </div>
 </nav>
-
 
 <router-outlet></router-outlet>
 

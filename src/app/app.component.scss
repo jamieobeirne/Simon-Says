@@ -1,9 +1,8 @@
-
-$dark:#000000;
 $grey: #3c3d41;
 $light-grey: #abafac;
 $green: #85e697;
 $bright: #FFFFFF;
+$dark:#000000;
 
 
 $block-font:"Oswald";
@@ -45,8 +44,22 @@ p,h1{
   margin-left: 20px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .icon-title-container{
+    margin-left: 10px;
+  }
+}
+
 .icon{
  margin-right: .8em;
+ width:90px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .icon{
+    margin-right: .3em;
+    width:70px;
+  }
 }
 
 .navbar-title{
@@ -56,15 +69,48 @@ p,h1{
   margin: 0;
 }
 
-.nav-links-container{
+@media only screen and (max-width: 1200px) {
+  .navbar-title{
+    font-size: 1.8em;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .navbar-title{
+    font-size: 1.5em;
+  }
+}
+
+
+.large-sreen-nav-links-container{
   display: flex;
   flex-flow: row;
   margin-right: 40px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .large-sreen-nav-links-container{
+    margin-right: 10px;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .large-sreen-nav-links-container{
+    display: none;
+  }
+}
+
+
 .nav-link-item{
   margin-right: 1em;
   margin-left: 2em;
+}
+
+@media only screen and (max-width: 1200px) {
+  li{
+    font-size: .8em;
+  }
 }
 
 .top-navigation a{
@@ -80,6 +126,29 @@ p,h1{
 
 .navbar-background{
   background-color: $grey;
+}
+
+/*hamburger menu*/
+.hamburger-container{
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .hamburger-container{
+    display: block;
+  }
+}
+
+
+.mat-button {
+margin-right: .5em;
+color: $green;
+font-size: 1.8em;
+}
+
+.mat-menu-item{
+  font-size: 1em;
+  color: $green;
 }
 
 

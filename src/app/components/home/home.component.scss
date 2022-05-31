@@ -11,6 +11,7 @@ $small-font-size:.8em;
 $middle-font-size:1em;
 $large-font-size:1.3em;
 
+
 p,h1{
   font-family: $decorative-fonts;
 }
@@ -21,21 +22,6 @@ p,h1{
   align-items: center;
   margin-bottom: 5em;
 }
-
-
-/*
-.background-image{
-  background: url(../../../assets/large-happy-homepage.webp); 
-  background-size:  100% 100%; 
-  background-position: center center;
-  background-repeat: no-repeat;
-  padding:0;
-  height:40vh;
-  width: 100vw;
-}
-*/
-/* cover or contain depending on what you want */
-
 
 .background-image{
   background: url(../../../assets/large-happy-homepage.webp); 

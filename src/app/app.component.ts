@@ -3,6 +3,8 @@ import { AuthService } from './shared/services/auth.service';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-root',
@@ -14,6 +16,7 @@ export class AppComponent {
   isLoggedIn: boolean = false;
   isAdmin:boolean = false;
   isDisabled:boolean = false;
+  faBars = faBars;
   
   constructor(public authService: AuthService, private router: Router) { 
     //this.isLoggedIn = false;
@@ -33,6 +36,14 @@ export class AppComponent {
     //this.isLoggedIn = false;
     //this.isLoggedInBehaviorSubject.next(false);
     this.router.navigate(['home']);
+  }
+
+  goToSignIn():void{
+    this.router.navigate(['login'])
+  }
+
+  goToListUsers():void{
+    this.router.navigate(['list'])
   }
 
   goToUserPage():void{
