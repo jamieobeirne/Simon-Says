@@ -57,4 +57,13 @@ button:hover{
 
 .redirect:hover{
   color:$light-grey;
- }
+}
+
+.register-fields{
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 70%;
+max-width: 420px;
+}
+

@@ -5,6 +5,7 @@ $dark:#000000;
 $block-font:"Oswald";
 $decorative-fonts:"Quattrocento";
 $small-font-size:.8em;
+$extra-small-font-size:.6em;
 $middle-font-size:1em;
 $large-font-size:1.3em;
 
@@ -21,6 +22,19 @@ p,h1{
   height: 50%;
 } 
 
+.table-container{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .table-container{
+    overflow: auto; //creates horizontal scroll
+    width: 92%;
+  }
+}
 
 .table-background-color{
   background-color: $grey;
@@ -28,8 +42,16 @@ p,h1{
 
 table {
   margin-top: 3em;
-  width: 90%;
+  width: 100%;
 }
+
+@media only screen and (max-width: 1200px) {
+  table {
+    width: 850px; //creates horizontal scroll
+  }
+}
+
+
 
 th{
   font-size: $small-font-size;
@@ -37,6 +59,18 @@ th{
 
 td{
   font-size: $small-font-size ;
+}
+@media only screen and (max-width: 1200px) {
+  td, th{
+    font-size:$extra-small-font-size;
+  }
+  th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type{ //copied from inspector to remove default padding
+    padding-right: 0; //copied from inspector to remove default padding
+  }
+
+  th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type{
+    padding-left: 15px;
+  }
 }
 
 .mat-button{
@@ -53,4 +87,5 @@ td{
 th:last-of-type{
   padding-left: 1.1em;
 }
+
 

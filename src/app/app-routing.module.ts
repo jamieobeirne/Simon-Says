@@ -9,7 +9,7 @@ import { VoiceToolComponent } from './components/voice-tool/voice-tool.component
 import { ListComponent } from './components/list/list.component';
 import { DisabledComponent } from './components/disabled/disabled.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
-import { UsersManualComponent } from './users-manual/users-manual.component';
+import { UsersManualComponent } from './components/users-manual/users-manual.component';
 
 
 const routes: Routes = [
