@@ -17,7 +17,6 @@
         
 
     <div class="large-sreen-nav-links-container">
-    
       <li>
         <a href="/login" 
         class="nav-link-item"
@@ -27,28 +26,18 @@
 
       <li>
         <a class="nav-link-item" 
-     
         (click)="goToUserUsersManual()">User's Manual</a>
       </li>
-
-      
-        <li>
+ 
+      <li>
         <a class="nav-link-item" 
         *ngIf="isLoggedIn"  
         (click)="goToUserPage()">User Page</a>
       </li>   
-      
-        
-      <!--
-      <li>
-        <a class="nav-link-item" 
-        *ngIf="isLoggedIn && isAdmin" 
-        routerLink="list">List of Users</a>
-      </li>
-      -->
 
       <li>
         <a class="nav-link-item" 
+        *ngIf="isLoggedIn && isAdmin" 
         routerLink="list">List of Users</a>
       </li>
 
@@ -57,7 +46,6 @@
         *ngIf="isLoggedIn" 
         (click)="logout()">LogOut</a>
       </li>
-    
     </div>
 
      

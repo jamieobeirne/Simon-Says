@@ -9,8 +9,9 @@ $small-font-size:.8em;
 $middle-font-size:1em;
 $large-font-size:1.3em;
 
-p,h1{
+p,h1, h2{
   font-family: $decorative-fonts;
+  
 }
 
 .disable-message-container{
@@ -36,4 +37,10 @@ p,h1{
   color: $dark;
   background-color:$grey ;
 }
-  
+
+@media only screen and (max-width: 640px) {
+  h2{
+    width: 60%;
+  }
+} 
+

@@ -9,7 +9,7 @@ export interface User {
   uid: string;
   email: string | null;
   displayName: string,
-  emailVerified: boolean;
+  /*emailVerified: boolean;*/
   roles: Roles;
   isDisabled: boolean;
 }

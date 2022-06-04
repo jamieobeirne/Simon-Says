@@ -8,6 +8,8 @@ $bright: #FFFFFF;
 
 $block-font:"Oswald";
 $decorative-fonts:"Quattrocento";
+
+$extra-small-font-size:.6em;
 $small-font-size:.8em;
 $middle-font-size:1em;
 $large-font-size:1.3em;
@@ -31,6 +33,12 @@ align-items: center;
   background:$grey;
 }
 
+@media only screen and (max-width: 640px) {
+  .edit-card{
+    width: 90%;
+  }
+}
+
 input{
   max-width:550px;
   margin-left: 1.5em;
@@ -42,6 +50,19 @@ mat-list-item{
   border-bottom: 1px solid $light-grey;
 }
 
+mat-list-item:first-of-type{
+  border-bottom: none;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .list-content{
+    font-size: $extra-small-font-size;
+  }
+}
+
+
 .mat-button{
  background: $bright;
  color:$grey;
@@ -51,3 +72,6 @@ mat-list-item{
   background: $green;
   color:$bright;
  }
+
+
+ 

@@ -1,10 +1,11 @@
-
 $grey: #878c88;
 $green: #85e697;
 $bright: #FFFFFF;
 $dark:#000000;
+
 $block-font:"Oswald";
 $decorative-fonts:"Quattrocento";
+$extra-small-font-size:.6em;
 $small-font-size:.8em;
 $middle-font-size:1em;
 $large-font-size:1.3em;
@@ -17,17 +18,40 @@ p,h1{
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 5em;
+  margin-bottom: 3em;
+}
+@media only screen and (max-width: 640px) {
+  .global-container-voice-tool{
+    margin-bottom: 5em;
+  }
 }
 
+
+@media only screen and (max-width: 1024px) {
+  .voice-tool-message{
+    width: 60%;
+  }
+}
 
 .login-fields{
   width:40%
 }
 
 .microphone{
-  margin-top: 5em;
+  margin-top: 3em;
+  margin-right: 10%;//help center icon
 }
-
+@media only screen and (max-width: 1024px) {
+  .microphone{
+    margin-right: 25%;//help center icon
+  }
+}
+@media only screen and (max-width: 768px) {
+  .microphone{
+    margin-right: 35%;//help center icon
+  }
+}
 
 .microphone-text{
   margin-top: 2em;

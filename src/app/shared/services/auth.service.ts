@@ -91,7 +91,7 @@ export class AuthService {
       uid: user.uid,
       email: user.email,
       displayName: displayName,
-      emailVerified: true,
+      /*emailVerified: user.emailVerified,*/
       roles:  {        
         user: true,
         },
@@ -108,11 +108,7 @@ export class AuthService {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
         .then((result) => {
-        
-          /* Call the SendVerificaitonMail() function when new user sign
-          up and returns promise */
-          //this.SendVerificationMail();
-  
+          //this.SendVerificationMail();//
           this.SetUserData(result.user, displayName);
           this.router.navigate(['login']);
         })
@@ -135,18 +131,20 @@ export class AuthService {
     });
   }
 
+  /*
   canView(): boolean{
     const allowed = ['admin'] 
     let user = this.getUser();
     return this.checkAuthorization(user, allowed)
-  }
+  }*/
 
   getUser(): User{
     let data = localStorage.getItem("user") || "";
     let dataObject = JSON.parse(data);
     return dataObject;
   }
-
+   
+  /*
   private checkAuthorization(user: User, allowedRoles: string[]): boolean {
     if (!user) return false
     for (let role of allowedRoles) {
@@ -155,39 +153,27 @@ export class AuthService {
       }
     }
     return false
-  }
+  }*/
 
   openVoiceTool() {
     this.router.navigate(['voice-tool']);
   }
 
-   // Reset Forggot password
-  ForgotPassword(passwordResetEmail: string) {
-    return this.afAuth
-      .sendPasswordResetEmail(passwordResetEmail)
-      .then(() => {
-        window.alert('Password reset email sent, check your inbox.');
-      })
-      .catch((error) => {
-        window.alert(error);
-      });
-  }
-
+ /*
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user')!);
-    return user !== null ? true : false;
-    /*
+    //return user !== null ? true : false;
     return user !== null && user.emailVerified !== false ? true : false;
-    */
   }
-    
+  */
+  /*
   SendVerificationMail() {
-    /*return this.afAuth.currentUser
+    return this.afAuth.currentUser
       .then((u: any) => u.sendEmailVerification())
       .then(() => {
         this.router.navigate(['verify-email-address']);
-      });*/
-  }
+      });
+  }*/
 
   //to display users for the admin list page
   async getListOfUsers():Promise<User[]>{

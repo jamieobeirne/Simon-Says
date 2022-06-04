@@ -1,4 +1,5 @@
 
+/*
 
 import { Injectable } from '@angular/core';
 import {
@@ -28,3 +29,4 @@ export class AuthGuard implements CanActivate {
 
 }
 
+*/
