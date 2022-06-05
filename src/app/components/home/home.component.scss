@@ -40,6 +40,12 @@ p,h1{
   }
 }
 
+@media only screen and (max-width: 500px) {
+  .background-image{
+    height: 370px;
+  }
+}
+
 @media only screen and (max-width: 550px) {
   .background-image{
     display:flex;
