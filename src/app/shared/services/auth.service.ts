@@ -9,7 +9,6 @@ import { User } from '../services/user';
 import { switchMap} from "rxjs/operators"
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
-import {AppComponent} from "../../app.component"
 import { BehaviorSubject, Subject } from 'rxjs';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 
@@ -23,7 +22,11 @@ export class AuthService {
   
   userData: Observable<User | undefined | null>; 
   userInfo: any = {};
-  authBehaviorSubject = new BehaviorSubject({isLoggedIn:false,isAdmin:false, isUser:false, isDisabled:false});
+  authBehaviorSubject = new BehaviorSubject({
+    isLoggedIn:false,
+    isAdmin:false, 
+    isUser:false, 
+    isDisabled:false});
 
 
   constructor(
@@ -148,7 +151,6 @@ export class AuthService {
       });
   }
 
-  //to display users for the admin list page
   async getListOfUsers():Promise<User[]>{
     let info = await this.afs.collection("/users").get().toPromise()
       .then(result=>{

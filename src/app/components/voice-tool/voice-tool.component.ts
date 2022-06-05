@@ -35,36 +35,7 @@ export class VoiceToolComponent implements OnInit {
     });
   }
 
-  /*
-  start(): void {
-    this.text = '';
-    this.isStoppedSpeechRecog = false;
-    this.recognition.start();
-    this.recognition.addEventListener('end', () => {
-      if (this.isStoppedSpeechRecog) {
-        this.recognition.stop();
-      } else {
-        this.wordConcat();
-        this.recognition.start();
-        if (this.text.trim() == 'I like pizza') {
-          this.stop();
-          this.text = 'Cool! Pizza is fab.';
-          this.error = true;
-        } else if (this.text.trim() == 'I like'){
-          this.stop();
-          this.text = 'Try saying \'I like it\'.';
-          this.error = true;
-        } else {
-          this.stop();
-          this.text = 'I\'m not sure if I understood that.';
-          this.error = true;
-        }
-      }
-    });
-    this.error = false;
-  }*/
-
-   
+ 
   start(): void {
     this.text = '';
     this.isStoppedSpeechRecog = false;
