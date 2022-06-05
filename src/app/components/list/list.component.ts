@@ -13,7 +13,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 
 export class ListComponent implements OnInit {
-  displayedColumns: string[] = ['displayName','email', 'uid', 'verified', 'active', 'roles', 'actions'];
+  displayedColumns: string[] = ['displayName','email', 'uid', 'active', 'roles', 'actions'];
   userList: User[] = [];
 
 

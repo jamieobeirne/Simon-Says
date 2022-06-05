@@ -11,11 +11,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // components
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { VoiceToolComponent } from './components/voice-tool/voice-tool.component';
 import { ListComponent } from './components/list/list.component';
 // service
@@ -41,7 +39,6 @@ import {MatMenuModule} from '@angular/material/menu';
     DashboardComponent,
     RegisterComponent,
     LoginComponent,
-    VerifyEmailComponent,
     HomeComponent,
     VoiceToolComponent,
     ListComponent,

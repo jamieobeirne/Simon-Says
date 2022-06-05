@@ -5,7 +5,6 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
-//import * as auth from 'firebase/auth';//
 import { User } from '../services/user';
 import { switchMap} from "rxjs/operators"
 import { Observable } from 'rxjs';
@@ -13,7 +12,7 @@ import { of } from 'rxjs';
 import {AppComponent} from "../../app.component"
 import { BehaviorSubject, Subject } from 'rxjs';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
-//import { getAuth } from 'firebase/auth';//
+
 
 
 
@@ -91,7 +90,6 @@ export class AuthService {
       uid: user.uid,
       email: user.email,
       displayName: displayName,
-      /*emailVerified: user.emailVerified,*/
       roles:  {        
         user: true,
         },
@@ -108,7 +106,6 @@ export class AuthService {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
         .then((result) => {
-          //this.SendVerificationMail()//
           this.SetUserData(result.user, displayName);
           this.router.navigate(['login']);
         })
@@ -131,12 +128,6 @@ export class AuthService {
     });
   }
 
-  /*
-  canView(): boolean{
-    const allowed = ['admin'] 
-    let user = this.getUser();
-    return this.checkAuthorization(user, allowed)
-  }*/
 
   getUser(): User{
     let data = localStorage.getItem("user") || "";
@@ -144,30 +135,11 @@ export class AuthService {
     return dataObject;
   }
    
-  /*
-  private checkAuthorization(user: User, allowedRoles: string[]): boolean {
-    if (!user) return false
-    for (let role of allowedRoles) {
-      if (role in user.roles) {
-        return true
-      }
-    }
-    return false
-  }*/
 
   openVoiceTool() {
     this.router.navigate(['voice-tool']);
   }
 
- /*
-  get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user')!);
-    //return user !== null ? true : false;
-    return user !== null && user.emailVerified !== false ? true : false;
-  }
-  */
-
-  
   SendVerificationMail() {
     return this.afAuth.currentUser
       .then((u: any) => u.sendEmailVerification())

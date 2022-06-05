@@ -4,7 +4,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { VoiceToolComponent } from './components/voice-tool/voice-tool.component';
 import { ListComponent } from './components/list/list.component';
 import { DisabledComponent } from './components/disabled/disabled.component';
@@ -16,10 +15,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'dashboard', component: DashboardComponent,
-    //canActivate: [AuthGuard],
-  },
-  { path: 'verify-email-address', component: VerifyEmailComponent },
+  { path: 'dashboard', component: DashboardComponent},
   { path: 'home', component: HomeComponent },
   { path: 'voice-tool', component: VoiceToolComponent },
   { path: 'list', component: ListComponent },
