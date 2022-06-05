@@ -43,8 +43,11 @@
     
         <button mat-button (click)="disableConfirmation(authService.userInfo.uid)">
           Disable</button>
-        <button mat-button class="edit-button"><fa-icon [icon]="faPencil" 
-          size="lg" (click)="goToEdit()"></fa-icon></button>
+        <button mat-button (click)="goToEdit()" class="edit-button">
+          <fa-icon 
+          [icon]="faPencil" 
+          size="lg">
+          </fa-icon></button>
       </mat-card>
     </div>
   </div>

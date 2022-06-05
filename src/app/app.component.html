@@ -18,6 +18,13 @@
 
     <div class="large-sreen-nav-links-container">
       <li>
+        <a href="/home" 
+        class="nav-link-item"
+        *ngIf="!isLoggedIn" 
+        routerLink="home">Home</a>
+      </li>
+
+      <li>
         <a href="/login" 
         class="nav-link-item"
         *ngIf="!isLoggedIn" 
@@ -25,14 +32,17 @@
       </li>
 
       <li>
-        <a class="nav-link-item" 
-        (click)="goToUserUsersManual()">User's Manual</a>
+        <a href="/users-manual"
+        class="nav-link-item" 
+        routerLink="users-manual"
+        >User's Manual</a>
       </li>
  
       <li>
-        <a class="nav-link-item" 
+        <a href="/dashboard"
+        class="nav-link-item" 
         *ngIf="isLoggedIn"  
-        (click)="goToUserPage()">User Page</a>
+        routerLink="dashboard">User Page</a>
       </li>   
 
       <li>
@@ -42,40 +52,58 @@
       </li>
 
       <li>
-        <a class="nav-link-item" 
+        <a href=""
+        class="nav-link-item" 
         *ngIf="isLoggedIn" 
         (click)="logout()">LogOut</a>
       </li>
     </div>
 
      
+
     <div class="hamburger-container">
       <button mat-button className="hamburger" [matMenuTriggerFor]="menu"><fa-icon [icon]="faBars"></fa-icon></button>
       <mat-menu #menu="matMenu">
 
         <button mat-menu-item *ngIf="!isLoggedIn">
-          <a 
+          <a href="/home" 
           class="nav-link-item"
-          (click)="goToSignIn()">Sign In</a>
+          *ngIf="!isLoggedIn" 
+          routerLink="home">Home</a>
+        </button>
+
+
+        <button mat-menu-item *ngIf="!isLoggedIn">
+          <a href="/login" 
+          class="nav-link-item"
+          *ngIf="!isLoggedIn" 
+          routerLink="login">Sign In</a>
         </button>
 
         <button mat-menu-item>
-          <a class="nav-link-item"   
-          (click)="goToUserUsersManual()">User's Manual</a>
+          <a 
+          class="nav-link-item"   
+          href="/users-manual"
+          routerLink="users-manual"
+          >User's Manual</a>
         </button>
 
         <button mat-menu-item *ngIf="isLoggedIn">
-          <a class="nav-link-item" 
-          (click)="goToUserPage()">User Page</a>
+          <a href="/dashboard"
+          class="nav-link-item" 
+          routerLink="dashboard">User Page</a>
         </button>
 
         <button mat-menu-item *ngIf="isLoggedIn && isAdmin" >
-          <a class="nav-link-item" 
-          (click)="goToListUsers()">List of Users</a>
+           <a class="nav-link-item" 
+            *ngIf="isLoggedIn && isAdmin" 
+            routerLink="list">List of Users</a>
         </button>
 
-        <button mat-menu-item *ngIf="isLoggedIn" >
-          <a class="nav-link-item" 
+        <button mat-menu-item *ngIf="isLoggedIn" (click)="logout()" >
+          <a href=""
+          class="nav-link-item" 
+          *ngIf="isLoggedIn" 
           (click)="logout()">LogOut</a>
         </button>
  

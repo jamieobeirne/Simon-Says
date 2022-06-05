@@ -1,11 +1,12 @@
-$grey: #878c88;
+$grey: #3c3d41;
+$light-grey: #abafac;
 $green: #85e697;
 $bright: #FFFFFF;
 $dark:#000000;
 
+
 $block-font:"Oswald";
 $decorative-fonts:"Quattrocento";
-$extra-small-font-size:.6em;
 $small-font-size:.8em;
 $middle-font-size:1em;
 $large-font-size:1.3em;
@@ -20,10 +21,12 @@ p,h1{
   align-items: center;
   margin-top: 5em;
   margin-bottom: 3em;
+  height:75vh;
 }
 @media only screen and (max-width: 640px) {
   .global-container-voice-tool{
     margin-bottom: 5em;
+    height: auto;
   }
 }
 
@@ -42,6 +45,8 @@ p,h1{
   margin-top: 3em;
   margin-right: 10%;//help center icon
 }
+
+
 @media only screen and (max-width: 1024px) {
   .microphone{
     margin-right: 25%;//help center icon
@@ -53,6 +58,32 @@ p,h1{
   }
 }
 
+i:hover{
+  color:$light-grey;
+} 
+
+i:active{
+  color:$green;
+} 
+
+
 .microphone-text{
+  margin-bottom: 3em;
   margin-top: 2em;
+  margin-left: 2em;
+  margin-right:2em;
+  color:$green;
+}
+
+@media only screen and (max-width: 640px) {
+  .microphone-text{
+   
+    margin-left:4em;
+    margin-right:4em;
+
+  }
+}
+
+.add-green-color-to-text{
+  color:$green;
 }

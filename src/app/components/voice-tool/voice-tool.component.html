@@ -1,11 +1,21 @@
 <div class="global-container-voice-tool">
   <div class="voice-tool-message">
     <h1>Welcome to the Simon Says Speaking Tool!</h1>
-    <p>Click the microphone and say "I like pizza". Repeat and say "I like".</p>
+    <p>Here is a sample of common errors for Spanish speakers: 
+      <span class="add-green-color-to-text">
+      "I like," 
+      "I have 24,"
+      "I am 24 years,"
+      "Is good,"
+      "I want to study a career."
+      </span></p>
+    <p>Click the microphone and say one. When you see the microphone turn green, it has engaged. There may be a delay and you may need to try more than once.</p>
   </div>
-    <div class="microphone">
-      <i class='fas fa-microphone fa-10x' (click)="start()"></i> <!-- microphone icon-->
-    </div>
+
+  <div class="microphone">
+    <i class='fas fa-microphone fa-10x' (click)="start()"></i> <!-- microphone icon-->
+  </div>
+
   <div class="microphone-text">
     <h2>{{text}}</h2>
   </div>

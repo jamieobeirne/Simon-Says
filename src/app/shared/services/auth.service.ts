@@ -5,7 +5,7 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
-import * as auth from 'firebase/auth';
+//import * as auth from 'firebase/auth';//
 import { User } from '../services/user';
 import { switchMap} from "rxjs/operators"
 import { Observable } from 'rxjs';
@@ -13,7 +13,7 @@ import { of } from 'rxjs';
 import {AppComponent} from "../../app.component"
 import { BehaviorSubject, Subject } from 'rxjs';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
-import { getAuth } from 'firebase/auth';
+//import { getAuth } from 'firebase/auth';//
 
 
 
@@ -108,7 +108,7 @@ export class AuthService {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
         .then((result) => {
-          //this.SendVerificationMail();//
+          //this.SendVerificationMail()//
           this.SetUserData(result.user, displayName);
           this.router.navigate(['login']);
         })
@@ -166,14 +166,15 @@ export class AuthService {
     return user !== null && user.emailVerified !== false ? true : false;
   }
   */
-  /*
+
+  
   SendVerificationMail() {
     return this.afAuth.currentUser
       .then((u: any) => u.sendEmailVerification())
       .then(() => {
         this.router.navigate(['verify-email-address']);
       });
-  }*/
+  }
 
   //to display users for the admin list page
   async getListOfUsers():Promise<User[]>{

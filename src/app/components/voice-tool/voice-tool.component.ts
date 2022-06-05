@@ -35,6 +35,7 @@ export class VoiceToolComponent implements OnInit {
     });
   }
 
+  /*
   start(): void {
     this.text = '';
     this.isStoppedSpeechRecog = false;
@@ -58,6 +59,59 @@ export class VoiceToolComponent implements OnInit {
           this.text = 'I\'m not sure if I understood that.';
           this.error = true;
         }
+      }
+    });
+    this.error = false;
+  }*/
+
+   
+  start(): void {
+    this.text = '';
+    this.isStoppedSpeechRecog = false;
+    this.recognition.start();
+    this.recognition.addEventListener('end', () => {
+      if (this.isStoppedSpeechRecog) {
+        this.recognition.stop();
+      } else {
+        this.wordConcat();
+        this.recognition.start();
+        
+        switch (this.text.trim()) {
+          case 'I like':
+            this.stop();
+            this.text = 'Try saying \'I like it\'. You always need to include the object.';
+            this.error = true;
+            break;
+          case 'I have 24':
+            this.stop();
+            this.text = 'Try saying \'I AM 24\'. Don\'t use \'have\' to tell your age.';
+            this.error = true;
+            break;
+          case 'I am 24 years':
+            this.stop();
+            this.text = 'Try saying \'I am 24\' or  \'I am 24 years old\' You can\'t say \'24 years\'.';
+            this.error = true;
+            break;
+          case 'is good':
+            this.stop();
+            this.text = 'Try saying \'It is good.\' or  \'It\'s good\' You need to include a subject.';
+            this.error = true;
+            break;
+          case 'I want to study a career':
+            this.stop();
+            this.text = '\'Career\' only relates to professional life. What you study at the university is a major or a degree.';
+            this.error = true;
+            break;
+  
+
+
+          default:
+            this.stop();
+            this.text = 'I\'m not sure if I understood that.';
+            this.error = true;
+          
+        }
+          
       }
     });
     this.error = false;
